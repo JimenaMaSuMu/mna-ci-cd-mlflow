@@ -20,7 +20,7 @@ mlflow.set_tracking_uri(uri="http://127.0.0.1:5000")
 mlflow.set_experiment("wine-quality-experiment")
 
 with mlflow.start_run():
-    random_state = 1
+    random_state = 2
     model = RandomForestClassifier(n_estimators=50, random_state=random_state)
     
     mlflow.log_params("random_state", random_state)
