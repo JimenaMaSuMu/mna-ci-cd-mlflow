@@ -12,7 +12,7 @@ y = data.target
 
 X_train, X_test, y_train, y_test = train_test_split(X, y,
                                                     test_size=0.2, 
-                                                    random_state=42)
+                                                    random_state=2)
 #Indicar el puerto donde se va a correr el codigo
 mlflow.set_tracking_uri(uri="https://glacial-tumble-magnetic.ngrok-free.dev")
 
@@ -23,7 +23,10 @@ with mlflow.start_run():
     random_state = 2
     model = RandomForestClassifier(n_estimators=50, random_state=random_state)
     
-    mlflow.log_params("random_state", random_state)
+    mlflow.log_params({
+    "random_state": random_state,
+    "n_estimators": 50
+    })
     model.fit(X_train, y_train)
 
     #Predictions
