@@ -14,7 +14,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y,
                                                     test_size=0.2, 
                                                     random_state=42)
 #Indicar el puerto donde se va a correr el codigo
-mlflow.set_tracking_uri(uri="http://127.0.0.1:5000")
+mlflow.set_tracking_uri(uri="https://glacial-tumble-magnetic.ngrok-free.dev")
 
 #setear el nombre del experimento
 mlflow.set_experiment("wine-quality-experiment")
