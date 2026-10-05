@@ -1,0 +1,35 @@
+#
+name: MLFlow CI/CD
+
+on:
+  #Cuando detecte un push en el repositorio de github
+  push:
+    #Solo en el main
+    branches:
+      - main
+
+#Tareas que se harán
+jobs:
+  train:
+  #se correrá en una compu que tenga ubuntu
+    runs-on: ubuntu-latest
+  # se activa 
+    steps:
+      #Esto activa dentro de las acciones de GitHub actions el CheckOut code
+      #Lo que significa es, traer el codigo
+      - name: Checkout code
+        uses: actions/checkout@v2
+      #Otro nuevo paso
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.8"
+      #Indicar las dependencias
+      - name: Install dependencies
+        run: /
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      #Llamar el codigo
+      - name: Run training script
+        run: /
+          python src/train.py

@@ -1,0 +1,1 @@
+mlflow server --host 127.0.0.1 --port 5000 --backend-store-uri sqlite:///mlflow.db --allowed-hosts "glacial-tumble-magnetic.ngrok-free.dev" --cors-allowed-origins "https://glacial-tumble-magnetic.ngrok-free.dev"
